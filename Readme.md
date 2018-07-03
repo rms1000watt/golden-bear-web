@@ -42,6 +42,14 @@ rm tmp.html
 
 ## Deploy
 
+```bash
+export AWS_PROFILE=golden-bear
+aws s3 cp   index.html  s3://goldenbear.io/index.html  --acl public-read
+aws s3 cp   favicon.ico s3://goldenbear.io/favicon.ico --acl public-read
+aws s3 sync assets/     s3://goldenbear.io/assets/     --acl public-read
+aws s3 sync images/     s3://goldenbear.io/images/     --acl public-read
+```
+
 ## Credits
 
 - `Overflow` by [HTML5 UP](https://html5up.net/)
